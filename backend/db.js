@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const connectDatabase = () => {
-  const uri = `mongodb+srv://admin007:${pwd}@cluster0.lwvjx8t.mongodb.net/?retryWrites=true&w=majority`;
+  const uri = process.env.MONGO_URI
   try {
     mongoose.connect(uri);
     console.log("Connected to database!");
